@@ -1,0 +1,11 @@
+<template>
+  <require from="./w3.css"></require>
+  <div class="w3-left" show.bind="!isEditing">
+    <i class="fa fa-pencil-square-o" click.delegate="edit()"></i>
+  </div>
+  <form show.bind="isEditing" submit.delegate="submit()" >
+    <input value.bind="content" css="width: ${width}px" required blur.trigger="submit()"/>
+  </form>
+  <div class="w3-border" show.bind="!isEditing"  ref="myspan">${content}</div>
+
+</template>
