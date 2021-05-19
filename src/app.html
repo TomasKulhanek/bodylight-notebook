@@ -2,12 +2,16 @@
   <require from="./edit-md"></require>
   <require from="font-awesome/css/font-awesome.min.css"></require>
   <require from="./w3.css"></require>
-  <h1>Editable notebook</h1>
+
+  <div class="w3-card-2 w3-padding" style="max-width:1200px;margin-left: auto;margin-right: auto;margin-top:8px">
+  <h1>Javascript bodylight notebook</h1>
   <p>This is nonediteable text</p>
+
   <div repeat.for="item of items">
-    <div class="w3-left"><i class="fa fa-plus" click.delegate="addBeforeNode(item)"></i></div>
     <edit-md content.two-way="item.textContent"></edit-md>
   </div>
 
-  <div class="w3-border"><i class="fa fa-plus" click.delegate="addNode()"></i></div>
+  <span class="w3-border"><i class="fa fa-plus" click.delegate="addNode()"></i></span>
+  </div>
+
 </template>

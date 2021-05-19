@@ -1,1 +1,21 @@
-span { background-color: #eef; padding: 0 2px }
+.edit_hover_class .icons {
+  display:none;
+}
+
+.icons-container {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.edit_hover_class:hover .icons{
+  display:block;
+  position:absolute;
+}
+
+.edit_hover_class {
+  border:1px solid #fff
+}
+.edit_hover_class:hover {
+  border-radius:4px;
+  border:1px solid #ccc
+}

@@ -1,11 +1,16 @@
 <template>
   <require from="./w3.css"></require>
-  <div class="w3-left" show.bind="!isEditing">
-    <i class="fa fa-pencil-square-o" click.delegate="edit()"></i>
+  <require from="./edit-md.css"></require>
+  <div class="edit_hover_class" ref="myspan" >
+    <span class="icons-container">
+    <span class="icons"><i class="fa fa-edit" click.delegate="edit()"></i><i class="fa fa-times" click.delegate="remove()"></i><i class="fa fa-plus"></i></span>
+    </span>
+    <form show.bind="isEditing" submit.delegate="submit()" id="editorref">
+      <textarea value.bind="content" blur.trigger="submit()" css="width: ${width}px " rows.bind="rows" ></textarea><!-- required  -->
+    </form>
+    <div dblclick.delegate="edit()" show.bind="!isEditing" >
+    <markdownaurelia content.bind="submittedContent" ></markdownaurelia>
+    </div>
   </div>
-  <form show.bind="isEditing" submit.delegate="submit()" >
-    <input value.bind="content" css="width: ${width}px" required blur.trigger="submit()"/>
-  </form>
-  <div class="w3-border" show.bind="!isEditing"  ref="myspan">${content}</div>
 
 </template>
